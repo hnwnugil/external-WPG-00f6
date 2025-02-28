@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI_PLay.uss?fileID=7433441132597879392&amp;guid=e57730b02becf4c48b506617695928e9&amp;type=3#UI_PLay" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; background-color: rgba(255, 0, 0, 0); width: 100%; height: 100%; align-content: auto; align-self: center; background-image: none; -unity-background-image-tint-color: rgb(255, 0, 0); visibility: visible; display: flex; overflow: visible; -unity-background-scale-mode: scale-and-crop; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-right-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); flex-direction: row; justify-content: center; align-items: auto;">
+        <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; flex-direction: row; flex-wrap: nowrap;">
+            <ui:Button style="width: 41px; height: 41px; align-self: center; border-right-color: rgba(55, 55, 55, 0); border-top-color: rgba(55, 55, 55, 0); border-left-color: rgba(55, 55, 55, 0); border-bottom-color: rgba(55, 55, 55, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; padding-right: 10px; padding-left: 10px; margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px;" />
+        </ui:VisualElement>
+        <ui:VisualElement enabled="false" name="InventoryRoot" class="InventoryTabDown InventoryTabUp" style="transition-property: opacity; width: 100%; height: 100%; position: absolute; flex-direction: row; top: 0; left: 0;">
+            <ui:VisualElement name="InventoryWindow" class="Inventory_OFF Inventory_ON" style="width: 100%; flex-direction: row-reverse; align-self: auto; justify-content: center; align-items: flex-start;">
+                <ui:VisualElement name="InventoryContainer" style="flex-grow: 1; height: 100%; align-items: auto; justify-content: center; align-self: flex-start; align-content: stretch; flex-direction: column; width: auto; display: flex; background-color: rgba(140, 140, 140, 0); -unity-text-outline-color: rgb(72, 72, 72);">
+                    <ui:VisualElement name="Label" style="flex-grow: 1; height: 1%; align-self: stretch; background-color: rgb(127, 64, 34);" />
+                    <ui:VisualElement name="SlotsContainer" style="flex-grow: 1; height: 80%; align-self: stretch;" />
+                </ui:VisualElement>
+                <ui:Button selectable="false" style="width: 10px; height: 10px; margin-top: 4px; margin-bottom: 4px; padding-right: 10px; padding-left: 10px; position: absolute; align-self: flex-start; top: -3px; left: 561px; background-color: rgb(29, 29, 29);" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; width: 50%; height: 100%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
