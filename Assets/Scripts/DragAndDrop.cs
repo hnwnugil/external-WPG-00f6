@@ -6,7 +6,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     CanvasGroup canvasGroup;
     RectTransform rectTransform;
     [SerializeField] Transform Root;
-    [HideInInspector] public Transform ParentAfterDrag;
+    public Transform ParentAfterDrag;
+    Transform ParentBeforeDrag;
     [SerializeField] Canvas canvas;
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("StartDragging");
-        ParentAfterDrag = Root;
+        ParentBeforeDrag = ParentAfterDrag;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.5f;
         transform.SetParent(Root);
@@ -31,15 +32,19 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("EndDragging");
+        
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
-        if (ParentAfterDrag != null)
+
+        if (ParentAfterDrag != ParentBeforeDrag)
         {
             transform.SetParent(ParentAfterDrag);
+            transform.position = ParentAfterDrag.position;
         }
         else
         {
-            transform.SetParent(Root);
+            transform.SetParent(ParentBeforeDrag);
+            transform.position = ParentBeforeDrag.position;
         }
     }
 
