@@ -10,8 +10,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         Debug.Log("Droped to Slot");
         if(eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<Transform>().position = transform.position;
-            eventData.pointerDrag.GetComponent<DragAndDrop>().ParentAfterDrag = this.transform;
+            eventData.pointerDrag.GetComponent<DragAndDrop>().ParentAfterDrag = transform;
 
         }
     }
