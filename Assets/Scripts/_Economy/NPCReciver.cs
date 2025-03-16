@@ -3,20 +3,19 @@ using UnityEngine.EventSystems;
 
 public class NPCReceiver : MonoBehaviour, IDropHandler
 {
-    public int itemValue = 10; // Nilai uang per item
-
     public void OnDrop(PointerEventData eventData)
     {
-        // Pastikan objek yang di-drag adalah item
-        DragAndDrop draggedItem = eventData.pointerDrag.GetComponent<DragAndDrop>();
-        if (draggedItem != null)
+        GameObject draggedItem = eventData.pointerDrag;
+        string itemName = draggedItem.name; // Ambil nama GameObject item
+
+        // Dapatkan nilai jual dari EconomyManager
+        int sellValue = EconomyManager.Instance.GetSellValue(itemName);
+        
+        if (sellValue > 0)
         {
-            // Tambahkan uang
-            Money moneySystem = GameObject.Find("Money").GetComponent<Money>();
-            moneySystem.AddMoney(itemValue);
-            
-            // Hancurkan item yang di-drag
-            Debug.Log("Item dijual ke NPC! Uang +" + itemValue);
+            EconomyManager.Instance.AddMoney(sellValue);
+            Destroy(draggedItem); // Hancurkan item yang dijual
+            Debug.Log($"Item {itemName} dijual! +{sellValue}");
         }
     }
 }

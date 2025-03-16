@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb70ee70738a0446a3de74d229ff31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemValue: 10
 --- !u!61 &114206099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -879,67 +878,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa07d8dd1509e94da82a88fef565868, type: 3}
---- !u!1 &717327261
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 717327264}
-  - component: {fileID: 717327263}
-  - component: {fileID: 717327262}
-  m_Layer: 0
-  m_Name: Money
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &717327262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717327261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec9f99f48af7ef145bdd1ff762789e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: {fileID: 717327261}
-  amount: 5
---- !u!114 &717327263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717327261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693529c795160aa469352eee5f527719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0
-  moneyText: {fileID: 1716275725}
---- !u!4 &717327264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717327261}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 631.55756, y: 268.62878, z: -3.084888}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785622610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,6 +2092,63 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 6369631555935536766, guid: baa07d8dd1509e94da82a88fef565868, type: 3}
   m_PrefabInstance: {fileID: 1311610187}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2004711058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004711060}
+  - component: {fileID: 2004711059}
+  m_Layer: 0
+  m_Name: EconomyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2004711059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004711058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de42dfb6f8996641bc8d9b789c59bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabase:
+  - itemName: A
+    sellValue: 5
+  - itemName: B
+    sellValue: 10
+  - itemName: C
+    sellValue: 15
+  - itemName: D
+    sellValue: 20
+  - itemName: E
+    sellValue: 25
+  currentMoney: 100
+  moneyText: {fileID: 1716275725}
+--- !u!4 &2004711060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004711058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 519.7994, y: 328.97675, z: 20.361149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2135023340 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7336731469279566119, guid: baa07d8dd1509e94da82a88fef565868, type: 3}
@@ -2175,4 +2170,4 @@ SceneRoots:
   - {fileID: 785622613}
   - {fileID: 1955774640}
   - {fileID: 114701343}
-  - {fileID: 717327264}
+  - {fileID: 2004711060}
